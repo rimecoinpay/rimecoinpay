@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  rimecoind The Rimecoin Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: rimecoind
+# processname: rimecoind
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/rimecoind, see below
+if [ -f /etc/sysconfig/rimecoind ]; then
+        . /etc/sysconfig/rimecoind
+fi
+
+RETVAL=0
+
+prog=rimecoind
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/rimecoind
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/rimecoind}
+
+# rimecoind defaults to /usr/bin/rimecoind, override with BITCOIND_BIN
+rimecoind=${BITCOIND_BIN-/usr/bin/rimecoind}
+
+# rimecoind opts default to -disablewallet, override with BITCOIND_OPTS
+rimecoind_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $rimecoind $rimecoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

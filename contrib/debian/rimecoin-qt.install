@@ -1,0 +1,6 @@
+usr/local/bin/rimecoin-qt usr/bin
+share/pixmaps/rimecoin32.xpm usr/share/pixmaps
+share/pixmaps/rimecoin16.xpm usr/share/pixmaps
+share/pixmaps/rimecoin128.png usr/share/pixmaps
+debian/rimecoin-qt.desktop usr/share/applications
+debian/rimecoin-qt.protocol usr/share/kde4/services/

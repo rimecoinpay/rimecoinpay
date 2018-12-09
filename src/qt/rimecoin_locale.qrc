@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/rimecoin_bg.qm</file>
+        <file alias="de">locale/rimecoin_de.qm</file>
+        <file alias="en">locale/rimecoin_en.qm</file>
+        <file alias="es">locale/rimecoin_es.qm</file>
+        <file alias="fi">locale/rimecoin_fi.qm</file>
+        <file alias="fr">locale/rimecoin_fr.qm</file>
+        <file alias="it">locale/rimecoin_it.qm</file>
+        <file alias="ja">locale/rimecoin_ja.qm</file>
+        <file alias="pl">locale/rimecoin_pl.qm</file>
+        <file alias="pt">locale/rimecoin_pt.qm</file>
+        <file alias="ru">locale/rimecoin_ru.qm</file>
+        <file alias="sk">locale/rimecoin_sk.qm</file>
+        <file alias="sv">locale/rimecoin_sv.qm</file>
+        <file alias="vi">locale/rimecoin_vi.qm</file>
+        <file alias="zh_CN">locale/rimecoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/rimecoin_zh_TW.qm</file>
+    </qresource>
+</RCC>

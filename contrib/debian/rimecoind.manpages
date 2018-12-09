@@ -1,0 +1,3 @@
+debian/manpages/rimecoind.1
+debian/manpages/rimecoin.conf.5
+debian/manpages/rimecoin-cli.1
